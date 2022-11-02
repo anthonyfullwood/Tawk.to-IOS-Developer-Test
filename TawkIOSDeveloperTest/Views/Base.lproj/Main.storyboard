@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cOT-7P-JHg">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Users Table View Controller-->
+        <scene sceneID="SSA-Eb-5Um">
+            <objects>
+                <tableViewController id="fN0-QT-O35" customClass="UsersTableViewController" customModule="TawkIOSDeveloperTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="95" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="lvf-aI-2uf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="YZI-4C-FR7">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <connections>
+                            <outlet property="dataSource" destination="fN0-QT-O35" id="OPT-Ih-gVD"/>
+                            <outlet property="delegate" destination="fN0-QT-O35" id="9Mh-t8-8en"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="PuV-bs-KPB"/>
+                    <connections>
+                        <outlet property="usersSearchBar" destination="YZI-4C-FR7" id="Beb-GR-SHI"/>
+                        <segue destination="LVJ-b6-85d" kind="show" identifier="goToProfile" id="JCY-5s-Lhb"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7V9-AB-WLE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="743.47826086956525" y="106.47321428571428"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="cb8-cW-q8d">
+            <objects>
+                <viewController id="LVJ-b6-85d" customClass="ProfileViewController" customModule="TawkIOSDeveloperTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Opr-7w-9nQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DGy-DH-LJY">
+                                <rect key="frame" x="0.0" y="92" width="414" height="770"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="a9y-74-fh6">
+                                        <rect key="frame" x="188.5" y="366.5" width="37" height="37"/>
+                                        <color key="color" systemColor="systemTealColor"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="a9y-74-fh6" firstAttribute="centerY" secondItem="DGy-DH-LJY" secondAttribute="centerY" id="1kb-Ez-2LP"/>
+                                    <constraint firstItem="a9y-74-fh6" firstAttribute="centerX" secondItem="DGy-DH-LJY" secondAttribute="centerX" id="46O-fk-FO5"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TRk-XS-OFR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DGy-DH-LJY" firstAttribute="leading" secondItem="TRk-XS-OFR" secondAttribute="leading" id="3b7-7d-ejw"/>
+                            <constraint firstItem="DGy-DH-LJY" firstAttribute="top" secondItem="TRk-XS-OFR" secondAttribute="top" id="I2z-fV-Xjk"/>
+                            <constraint firstItem="DGy-DH-LJY" firstAttribute="bottom" secondItem="TRk-XS-OFR" secondAttribute="bottom" id="WNI-B2-E9z"/>
+                            <constraint firstItem="DGy-DH-LJY" firstAttribute="trailing" secondItem="TRk-XS-OFR" secondAttribute="trailing" id="x7m-ZT-3Nn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9bw-uc-MQG"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="a9y-74-fh6" id="UW5-oq-IZG"/>
+                        <outlet property="container" destination="DGy-DH-LJY" id="7Ow-4v-DEh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NOo-G6-GhC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1544.9275362318842" y="105.80357142857143"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LC1-r7-Tln">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cOT-7P-JHg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CHX-Ky-iDf">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="systemTealColor"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fN0-QT-O35" kind="relationship" relationship="rootViewController" id="vRE-dR-KMz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5JH-qa-7iZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-166.66666666666669" y="106.47321428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
